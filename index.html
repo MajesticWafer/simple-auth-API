@@ -6,16 +6,22 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f2f2f2;
             overflow: hidden;
+            background-color: #f2f2f2;
         }
         .container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
+        }
+        .content {
+            max-width: 400px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 1s;
         }
         h1 {
             text-align: center;
@@ -29,12 +35,7 @@
             margin-bottom: 30px;
         }
         form {
-            max-width: 300px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 1s;
+            margin-top: 20px;
         }
         input[type="text"],
         input[type="password"],
@@ -61,7 +62,7 @@
             margin-bottom: 10px;
         }
         .shake {
-            animation: shake 0.5s;
+            animation: shake 0.75s;
         }
         @keyframes shake {
             0% { transform: translateX(0) rotate(0); }
@@ -84,13 +85,15 @@
 </head>
 <body>
     <div class="container">
-        <h1>Simple Authentication</h1>
-        <h2>A small, simple authentication service using GitHub Pages</h2>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <input type="submit" value="Login">
-        </form>
+        <div class="content">
+            <h1>Simple Authentication</h1>
+            <h2>A small, simple authentication service using GitHub Pages</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <input type="submit" value="Login">
+            </form>
+        </div>
     </div>
 
     <script>
