@@ -7,13 +7,19 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
+            background-color: #f2f2f2;
         }
         h1 {
             text-align: center;
+            color: #333;
         }
         form {
             max-width: 300px;
             margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         input[type="text"],
         input[type="password"],
@@ -21,6 +27,8 @@
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
         }
         input[type="submit"] {
             background-color: #4CAF50;
@@ -33,19 +41,19 @@
             margin-bottom: 10px;
         }
         .shake {
-            animation: shake 0.75s;
+            animation: shake 0.5s;
         }
         @keyframes shake {
             0% { transform: translateX(0); }
-            10% { transform: translateX(-2px); }
-            20% { transform: translateX(2px); }
-            30% { transform: translateX(-2px); }
-            40% { transform: translateX(2px); }
-            50% { transform: translateX(-2px); }
-            60% { transform: translateX(2px); }
-            70% { transform: translateX(-2px); }
-            80% { transform: translateX(2px); }
-            90% { transform: translateX(-2px); }
+            10% { transform: translateX(-3px); }
+            20% { transform: translateX(3px); }
+            30% { transform: translateX(-3px); }
+            40% { transform: translateX(3px); }
+            50% { transform: translateX(-3px); }
+            60% { transform: translateX(3px); }
+            70% { transform: translateX(-3px); }
+            80% { transform: translateX(3px); }
+            90% { transform: translateX(-3px); }
             100% { transform: translateX(0); }
         }
     </style>
@@ -79,8 +87,8 @@
                     loginButton.style.backgroundColor = "#4CAF50";
                     setTimeout(function() {
                         loginButton.style.backgroundColor = "";
-                    }, 1000);
-                }, 750);
+                    }, 750);
+                }, 500);
             }
         });
     </script>
