@@ -5,29 +5,26 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            ... ... margin: 0;
-            padding: 20px;
-            background-color: #f2f2f2;
-            background-image: linear-gradient(to bottom right, #ff8a00, #e52e71);
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: ... ... flex;
+            margin: 0;
+            padding: 0;
+            display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            background-color: #333;
+        }
+        .container {
+            text-align: center;
         }
         h1 {
-            text-align: center;
             color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, ... ... 0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             margin-bottom: 10px;
         }
         h2 {
-            text-align: center;
             color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            margin-top: 0;
-            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-top: 10px;
         }
         form {
             max-width: 300px;
@@ -35,23 +32,23 @@
             background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 5px;
-            ... box-shadow: 0 ... 2px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             animation: fadeIn 1s;
         }
         input[type="text"],
         input[type="password"],
         input[type="submit"] {
             width: 100%;
-            ... padding: 10px;
-            ... margin-bottom: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 3px;
             transition: border-color 0.3s;
         }
         input[type="submit"] {
             background-color: #4CAF50;
-            ... color: white;
-            border: ... none;
+            color: white;
+            border: none;
             cursor: pointer;
             transition: background-color 0.3s;
         }
@@ -61,57 +58,59 @@
         .error {
             color: red;
             margin-bottom: 10px;
- ... }
+        }
         .shake {
-            ... animation: shake 0.5s;
+            animation: shake 0.5s;
         }
         @keyframes shake {
             0% { transform: translateX(0) rotate(0); }
             10% { transform: translateX(-2px) rotate(-2deg); }
-            20% ... { transform: ... translateX(2px) rotate(2deg); }
+            20% { transform: translateX(2px) rotate(2deg); }
             30% { transform: translateX(-2px) rotate(-2deg); }
             40% { transform: translateX(2px) rotate(2deg); }
-            50% { transform: ... translateX(-2px) ... rotate(-2deg); }
+            50% { transform: translateX(-2px) rotate(-2deg); }
             60% { transform: translateX(2px) rotate(2deg); }
             70% { transform: translateX(-2px) rotate(-2deg); }
-            80% { transform: ... translateX(2px) rotate(2deg); }
-  ... 90% { transform: translateX(-2px) rotate(-2deg); }
+            80% { transform: translateX(2px) rotate(2deg); }
+            90% { transform: translateX(-2px) rotate(-2deg); }
             100% { transform: translateX(0) rotate(0); }
         }
         @keyframes fadeIn {
-            0% { ... opacity: 0; transform: translateY(-20px); }
-            100% ... { opacity: 1; transform: translateY(0); }
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <h1>Simple Authentication</h1>
-    <h2>A small, simple authentication service ... using GitHub Pages</h2>
-    <form id="loginForm">
-        <input ... type="text" id="username" placeholder="Username" required>
-        <input type="password" id="password" placeholder="Password" required>
-        <input type="submit" value="Login">
-    ... </form>
+    <div class="container">
+        <h1>Simple Authentication</h1>
+        <h2>A small, simple authentication service using GitHub Pages</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
 
     <script>
-        document.getElementById("loginForm").addEventListener("submit", ... function(event) {
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault();
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
             // TODO: Make an API request to authenticate the user
 
-            ... // Example code to handle the API response
-            if (username === "admin" && password ... === "password") {
+            // Example code to handle the API response
+            if (username === "admin" && password === "password") {
                 alert("Login successful!");
             } else {
                 var loginButton = document.querySelector('input[type="submit"]');
                 loginButton.classList.add("shake");
-                loginButton.style.backgroundColor = ... "red";
+                loginButton.style.backgroundColor = "red";
 
                 setTimeout(function() {
                     loginButton.classList.remove("shake");
-                    loginButton.style.backgroundColor ... = "#4CAF50";
+                    loginButton.style.backgroundColor = "#4CAF50";
 
                     setTimeout(function() {
                         loginButton.style.backgroundColor = "";
@@ -119,6 +118,6 @@
                 }, 500);
             }
         });
-    ... </script>
+    </script>
 </body>
 </html>
