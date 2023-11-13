@@ -52,15 +52,15 @@
         }
         @keyframes shake {
             0% { transform: translateX(0) rotate(0); }
-            10% { transform: translateX(-1px) rotate(-1deg); }
-            20% { transform: translateX(1px) rotate(1deg); }
-            30% { transform: translateX(-1px) rotate(-1deg); }
-            40% { transform: translateX(1px) rotate(1deg); }
-            50% { transform: translateX(-1px) rotate(-1deg); }
-            60% { transform: translateX(1px) rotate(1deg); }
-            70% { transform: translateX(-1px) rotate(-1deg); }
-            80% { transform: translateX(1px) rotate(1deg); }
-            90% { transform: translateX(-1px) rotate(-1deg); }
+            10% { transform: translateX(-2px) rotate(-2deg); }
+            20% { transform: translateX(2px) rotate(2deg); }
+            30% { transform: translateX(-2px) rotate(-2deg); }
+            40% { transform: translateX(2px) rotate(2deg); }
+            50% { transform: translateX(-2px) rotate(-2deg); }
+            60% { transform: translateX(2px) rotate(2deg); }
+            70% { transform: translateX(-2px) rotate(-2deg); }
+            80% { transform: translateX(2px) rotate(2deg); }
+            90% { transform: translateX(-2px) rotate(-2deg); }
             100% { transform: translateX(0) rotate(0); }
         }
         @keyframes fadeIn {
@@ -78,15 +78,6 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             animation: fadeIn 0.5s;
         }
-        .popup-content {
-            text-align: center;
-        }
-        .popup-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-        }
     </style>
 </head>
 <body>
@@ -97,19 +88,11 @@
         <input type="submit" value="Login">
     </form>
 
-    <div class="popup" id="popup">
-        <div class="popup-content">
-            <span class="popup-close" onclick="closePopup()">&times;</span>
-            <h2>Login Successful!</h2>
-        </div>
+    <div id="popup" class="popup">
+        <p>Login successful.</p>
     </div>
 
     <script>
-        function closePopup() {
-            var popup = document.getElementById("popup");
-            popup.style.display = "none";
-        }
-
         document.getElementById("loginForm").addEventListener("submit", function(event) {
             event.preventDefault();
             var username = document.getElementById("username").value;
@@ -121,6 +104,9 @@
             if (username === "admin" && password === "password") {
                 var popup = document.getElementById("popup");
                 popup.style.display = "block";
+                setTimeout(function() {
+                    popup.style.display = "none";
+                }, 2000);
             } else {
                 var loginButton = document.querySelector('input[type="submit"]');
                 loginButton.classList.add("shake");
