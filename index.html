@@ -51,16 +51,16 @@
             animation: shake 0.5s;
         }
         @keyframes shake {
-            0% { transform: translateX(0); }
-            10% { transform: translateX(-5px) rotate(-5deg); }
-            20% { transform: translateX(5px) rotate(5deg); }
-            30% { transform: translateX(-5px) rotate(-5deg); }
-            40% { transform: translateX(5px) rotate(5deg); }
-            50% { transform: translateX(-5px) rotate(-5deg); }
-            60% { transform: translateX(5px) rotate(5deg); }
-            70% { transform: translateX(-5px) rotate(-5deg); }
-            80% { transform: translateX(5px) rotate(5deg); }
-            90% { transform: translateX(-5px) rotate(-5deg); }
+            0% { transform: translateX(0) rotate(0); }
+            10% { transform: translateX(-2px) rotate(-2deg); }
+            20% { transform: translateX(2px) rotate(2deg); }
+            30% { transform: translateX(-2px) rotate(-2deg); }
+            40% { transform: translateX(2px) rotate(2deg); }
+            50% { transform: translateX(-2px) rotate(-2deg); }
+            60% { transform: translateX(2px) rotate(2deg); }
+            70% { transform: translateX(-2px) rotate(-2deg); }
+            80% { transform: translateX(2px) rotate(2deg); }
+            90% { transform: translateX(-2px) rotate(-2deg); }
             100% { transform: translateX(0) rotate(0); }
         }
         @keyframes fadeIn {
@@ -85,7 +85,7 @@
 
             // TODO: Make an API request to authenticate the user
 
-            // Example code to handle the response
+            // Example code to handle the API response
             if (username === "admin" && password === "password") {
                 alert("Login successful!");
             } else {
