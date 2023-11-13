@@ -26,10 +26,27 @@
             background-color: #4CAF50;
             color: white;
             cursor: pointer;
+            transition: background-color 0.5s;
         }
         .error {
             color: red;
             margin-bottom: 10px;
+        }
+        .shake {
+            animation: shake 0.5s;
+        }
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            10% { transform: translateX(-10px); }
+            20% { transform: translateX(10px); }
+            30% { transform: translateX(-10px); }
+            40% { transform: translateX(10px); }
+            50% { transform: translateX(-10px); }
+            60% { transform: translateX(10px); }
+            70% { transform: translateX(-10px); }
+            80% { transform: translateX(10px); }
+            90% { transform: translateX(-10px); }
+            100% { transform: translateX(0); }
         }
     </style>
 </head>
@@ -53,7 +70,17 @@
             if (username === "admin" && password === "password") {
                 alert("Login successful!");
             } else {
-                alert("Invalid username or password.");
+                var loginButton = document.querySelector('input[type="submit"]');
+                loginButton.classList.add("shake");
+                loginButton.style.backgroundColor = "red";
+
+                setTimeout(function() {
+                    loginButton.classList.remove("shake");
+                    loginButton.style.backgroundColor = "#4CAF50";
+                    setTimeout(function() {
+                        loginButton.style.backgroundColor = "";
+                    }, 1000);
+                }, 500);
             }
         });
     </script>
